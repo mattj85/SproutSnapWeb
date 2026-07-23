@@ -156,11 +156,16 @@ export default function App() {
     return () => window.removeEventListener('popstate', onPop)
   }, [])
 
+  // Reset scroll after the new route commits, so switching pages always
+  // starts at the top regardless of where the previous page was scrolled.
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [path])
+
   const navigate = (to) => {
     if (to === normalizePath()) return
     window.history.pushState({}, '', to)
     setPath(to)
-    window.scrollTo(0, 0)
   }
 
   if (path === '/privacy') return <PrivacyPolicy onNavigate={navigate} />

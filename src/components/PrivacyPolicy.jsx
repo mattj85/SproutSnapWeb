@@ -14,8 +14,7 @@ import { ArrowRight, Leaf, Lock, Cloud, Camera, Images, Drop } from './Icons.jsx
    purchases, third-party SDKs, or tracking of any kind. */
 
 const LAST_UPDATED = '23 July 2026'
-/* TODO: swap for a real contact address before the listing goes live. */
-const CONTACT_EMAIL = 'privacy@sproutsnap.app'
+const CONTACT_EMAIL = 'mattjon@icloud.com'
 
 export default function PrivacyPolicy({ onNavigate = () => {} }) {
   useEffect(() => {

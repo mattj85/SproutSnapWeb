@@ -1183,6 +1183,17 @@ section {
   text-decoration-color: var(--sprout);
 }
 
+/* The CTA button is an anchor inside .legal — keep it a button, not a link. */
+.legal a.btn-sprout {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.legal a.btn-sprout:hover {
+  color: #fff;
+}
+
 .legal-list {
   margin: 0 0 1rem;
   padding: 0;
