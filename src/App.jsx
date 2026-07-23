@@ -1,6 +1,8 @@
+import { useEffect, useState } from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import SiteNav from './components/SiteNav.jsx'
 import CompareSlider from './components/CompareSlider.jsx'
+import PrivacyPolicy from './components/PrivacyPolicy.jsx'
 import useReveal from './useReveal.js'
 import appIcon from './assets/app-icon.png'
 import {
@@ -134,7 +136,38 @@ const INCLUDED = [
   }
 ]
 
+/* --- Minimal path-based router ---
+   The site is a static SPA, so "routes" are just a pathname check.
+   NOTE: for /privacy to resolve on a direct hit (as the App Store link
+   will), the host must fall back to index.html for unknown paths
+   (e.g. nginx: `try_files $uri $uri/ /index.html;`). Internal links use
+   pushState below so navigating in-app never needs a round trip. */
+function normalizePath() {
+  const p = window.location.pathname.replace(/\/+$/, '')
+  return p === '' ? '/' : p
+}
+
 export default function App() {
+  const [path, setPath] = useState(normalizePath)
+
+  useEffect(() => {
+    const onPop = () => setPath(normalizePath())
+    window.addEventListener('popstate', onPop)
+    return () => window.removeEventListener('popstate', onPop)
+  }, [])
+
+  const navigate = (to) => {
+    if (to === normalizePath()) return
+    window.history.pushState({}, '', to)
+    setPath(to)
+    window.scrollTo(0, 0)
+  }
+
+  if (path === '/privacy') return <PrivacyPolicy onNavigate={navigate} />
+  return <Home onNavigate={navigate} />
+}
+
+function Home({ onNavigate }) {
   useReveal()
 
   return (
@@ -353,6 +386,15 @@ export default function App() {
               <a href="#how">How it works</a>
               <a href="#free">Free</a>
               <a href="#download">Download</a>
+              <a
+                href="/privacy"
+                onClick={(e) => {
+                  e.preventDefault()
+                  onNavigate('/privacy')
+                }}
+              >
+                Privacy
+              </a>
             </div>
           </div>
           <div className="footer-note">

@@ -1006,6 +1006,227 @@ section {
   gap: 1rem;
 }
 
+/* ---------- Privacy / legal page ---------- */
+.legal-top {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(251, 252, 248, 0.82);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+
+.legal-top-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 74px;
+}
+
+.legal-hero {
+  padding: clamp(48px, 8vw, 88px) 0 clamp(28px, 5vw, 48px);
+}
+
+.legal-title {
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  margin: 1.2rem 0 0.6rem;
+}
+
+.legal-updated {
+  font-size: 0.86rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  margin: 0 0 1.6rem;
+}
+
+.legal-lede {
+  font-size: 1.2rem;
+  max-width: 60ch;
+}
+
+.legal {
+  max-width: 760px;
+  margin: 0 auto;
+  padding-bottom: clamp(64px, 10vw, 120px);
+}
+
+/* At-a-glance summary card */
+.legal-summary {
+  background: linear-gradient(155deg, #16281d 0%, #1e5238 60%, #216642 100%);
+  border-radius: 28px;
+  padding: clamp(28px, 4vw, 44px);
+  color: #eaf3e6;
+  box-shadow: var(--shadow-lift);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: clamp(40px, 6vw, 64px);
+}
+
+.legal-summary::after {
+  content: '';
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  right: -120px;
+  top: -140px;
+  background: radial-gradient(circle, rgba(183, 227, 106, 0.32), transparent 68%);
+  pointer-events: none;
+}
+
+.legal-summary h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin: 0 0 1.4rem;
+  letter-spacing: -0.01em;
+  position: relative;
+  z-index: 2;
+}
+
+.legal-summary-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.legal-summary-list li {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  line-height: 1.55;
+  font-size: 1rem;
+  color: rgba(234, 243, 230, 0.86);
+}
+
+.legal-summary-list strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.legal-summary-list .tick {
+  flex: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: rgba(183, 227, 106, 0.16);
+  display: grid;
+  place-items: center;
+  color: var(--chartreuse);
+}
+
+.legal-summary-list .tick svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Body sections */
+.legal-section {
+  margin-bottom: 2.6rem;
+}
+
+.legal-section h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.4rem, 2.6vw, 1.8rem);
+  letter-spacing: -0.01em;
+  margin: 0 0 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.legal-ico {
+  flex: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(150deg, var(--chartreuse), var(--aqua));
+  color: var(--deep);
+}
+
+.legal-ico svg {
+  width: 20px;
+  height: 20px;
+}
+
+.legal p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin: 0 0 1rem;
+}
+
+.legal strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.legal a {
+  color: var(--deep);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s ease, color 0.2s ease;
+}
+
+.legal a:hover {
+  color: var(--sprout);
+  text-decoration-color: var(--sprout);
+}
+
+.legal-list {
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.legal-list li {
+  position: relative;
+  padding-left: 1.6rem;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin-bottom: 0.7rem;
+}
+
+.legal-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--chartreuse);
+  box-shadow: 0 0 0 3px rgba(183, 227, 106, 0.25);
+}
+
+.legal-cta {
+  margin-top: 2.6rem;
+  padding-top: 2.2rem;
+  border-top: 1px dashed var(--line);
+}
+
+@media (max-width: 720px) {
+  .legal-section h2 {
+    font-size: 1.35rem;
+  }
+  .legal-summary-list .tick,
+  .legal-ico {
+    width: 34px;
+    height: 34px;
+  }
+}
+
 /* ---------- Scroll reveal ---------- */
 .reveal {
   opacity: 0;
