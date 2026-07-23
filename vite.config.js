@@ -4,5 +4,9 @@ import react from '@vitejs/plugin-react'
 // SproutSnap promo SPA
 export default defineConfig({
   plugins: [react()],
-  server: { port: 5180, open: false }
+  server: {
+    port: 5180,
+    open: false,
+    allowedHosts: ['sproutsnap.rooksnet.uk']
+  }
 })
