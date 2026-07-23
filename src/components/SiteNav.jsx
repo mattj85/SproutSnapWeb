@@ -6,7 +6,7 @@ import appIcon from '../assets/app-icon.png'
 const links = [
   ['Features', '#features'],
   ['How it works', '#how'],
-  ['Pro', '#pro']
+  ['Free', '#free']
 ]
 
 export default function SiteNav() {

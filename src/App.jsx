@@ -109,27 +109,28 @@ const STEPS = [
     body: 'Drag across the timeline to watch roots reach down and leaves unfurl — then export the Day 1 vs latest image to share.'
   },
   {
-    day: 'With Pro',
+    day: 'When you’re ready',
     title: 'Play it back',
     body: 'Stitch the whole timeline into a smooth time-lapse video — weeks of growth in a few seconds.'
   }
 ]
 
-const PRO = [
+/* Formerly the "Pro" upgrades — now included for everyone, free. */
+const INCLUDED = [
   {
     icon: <Play />,
     title: 'Time-lapse videos',
-    body: 'Turn any plant’s photos into a shareable growth video.'
+    body: 'Turn any plant’s photos into a shareable growth video — no unlock required.'
   },
   {
     icon: <InfinityIcon />,
     title: 'Unlimited plants',
-    body: 'Track your whole collection. The free version keeps up to five.'
+    body: 'Track your whole collection. There’s no five-plant cap, and never was a fee.'
   },
   {
     icon: <Sparkle />,
     title: 'Watermark-free exports',
-    body: 'Share clean comparison images and videos, your way.'
+    body: 'Every comparison image and video exports clean — share it your way.'
   }
 ]
 
@@ -172,8 +173,8 @@ export default function App() {
                 </div>
                 <div className="divider" />
                 <div className="stat">
-                  <span className="num">One-time</span>
-                  <span className="lbl">Pro unlock, no subscription</span>
+                  <span className="num">No paywall</span>
+                  <span className="lbl">every feature, free — no Pro, no ads</span>
                 </div>
               </div>
             </div>
@@ -271,35 +272,35 @@ export default function App() {
         </Container>
       </section>
 
-      {/* ---------------- Pro ---------------- */}
-      <section id="pro" className="section-pad">
+      {/* ---------------- Free / no paywall ---------------- */}
+      <section id="free" className="section-pad">
         <Container fluid className="wrap">
           <div className="pro-card reveal">
             <div className="pro-grid">
               <div>
-                <span className="eyebrow">SproutSnap Pro</span>
+                <span className="eyebrow">No paywall</span>
                 <h2>
-                  Unlock the whole
+                  The whole greenhouse.
                   <br />
-                  greenhouse. Once.
+                  Free.
                 </h2>
                 <p style={{ color: 'rgba(234,243,230,0.78)', fontSize: '1.1rem', lineHeight: 1.6, maxWidth: '40ch' }}>
-                  Everything is yours to keep with a single purchase. No monthly fee,
-                  no plant tax — just more room to grow.
+                  Every feature is included from the first launch. No Pro tier, no
+                  subscription, no in-app purchases, no plant tax — just room to grow.
                 </p>
                 <div className="pro-price-tag">
-                  <span className="amount">One-time purchase</span>
-                  <span className="note">· no subscription, ever</span>
+                  <span className="amount">£0</span>
+                  <span className="note">· nothing to unlock, ever</span>
                 </div>
                 <div>
                   <a className="btn-chartreuse" href="#download">
-                    Unlock Pro <ArrowRight style={{ width: 18, height: 18 }} />
+                    Get SproutSnap <ArrowRight style={{ width: 18, height: 18 }} />
                   </a>
                 </div>
               </div>
 
               <ul className="pro-list">
-                {PRO.map((p) => (
+                {INCLUDED.map((p) => (
                   <li key={p.title}>
                     <span className="tick">{p.icon}</span>
                     <div>
@@ -324,8 +325,8 @@ export default function App() {
             </div>
             <h2 className="display">Your windowsill deserves a timeline.</h2>
             <p>
-              SproutSnap is free on iPhone. Start with your trickiest cutting and
-              watch what happens over the next few weeks.
+              SproutSnap is free on iPhone — every feature, no in-app purchases. Start
+              with your trickiest cutting and watch what happens over the next few weeks.
             </p>
             <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
               <AppStoreBadge />
@@ -350,7 +351,7 @@ export default function App() {
             <div className="footer-links">
               <a href="#features">Features</a>
               <a href="#how">How it works</a>
-              <a href="#pro">Pro</a>
+              <a href="#free">Free</a>
               <a href="#download">Download</a>
             </div>
           </div>
