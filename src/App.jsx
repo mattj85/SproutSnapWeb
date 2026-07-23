@@ -11,6 +11,9 @@ import {
   Drop,
   Cloud,
   Lock,
+  Import,
+  Note,
+  Images,
   Play,
   Infinity as InfinityIcon,
   Sparkle,
@@ -55,12 +58,27 @@ const FEATURES = [
   {
     icon: <Camera />,
     title: 'Capture, lined up',
-    body: 'Every shot is cropped to a clean 3:4 and kept in order. The last photo ghosts in over the camera so each new frame matches the last.'
+    body: 'Every shot is cropped to a clean 3:4 and kept in order. Your day-one photo ghosts in over the camera, so each new frame lines up with where you started.'
+  },
+  {
+    icon: <Import />,
+    title: 'Back-fill from your roll',
+    body: 'Already have progress photos? Import them from your library — SproutSnap reads each shot’s original date and slots it into the timeline in the right place.'
+  },
+  {
+    icon: <Note />,
+    title: 'Notes on any frame',
+    body: 'Jot what you changed — new water, a fresh node, first root — against any photo, so the story isn’t just pictures.'
   },
   {
     icon: <Drop />,
     title: 'Fresh-water reminders',
-    body: 'Set an interval per plant and get a gentle nudge when it’s time to swap the water. Roots love it.'
+    body: 'Set an interval per plant and get a gentle nudge when it’s time to swap the water. Manage every plant’s schedule from one Fresh Water tab.'
+  },
+  {
+    icon: <Images />,
+    title: 'A copy in your Photos',
+    body: 'Flip on one switch and every capture is also saved to a dedicated SproutSnap album in Photos — backed up right alongside your other shots.'
   },
   {
     icon: <Cloud />,
@@ -83,7 +101,7 @@ const STEPS = [
   {
     day: 'Every few days',
     title: 'Snap the progress',
-    body: 'Open the camera and shoot. The previous photo fades in as a guide, so the framing stays consistent shot to shot.'
+    body: 'Open the camera and shoot. Your first photo fades in as a guide, so the framing stays consistent shot to shot.'
   },
   {
     day: 'Anytime',
@@ -106,7 +124,7 @@ const PRO = [
   {
     icon: <InfinityIcon />,
     title: 'Unlimited plants',
-    body: 'Track your whole collection. The free version keeps up to three.'
+    body: 'Track your whole collection. The free version keeps up to five.'
   },
   {
     icon: <Sparkle />,

@@ -82,6 +82,28 @@ export const Apple = (p) => (
   </svg>
 )
 
+export const Import = (p) => (
+  <svg {...base} {...p}>
+    <path d="M12 3v9m0 0-3.2-3.2M12 12l3.2-3.2" />
+    <path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3" />
+  </svg>
+)
+
+export const Note = (p) => (
+  <svg {...base} {...p}>
+    <rect x="5" y="4" width="14" height="16" rx="2.5" />
+    <path d="M9 9h6M9 13h6M9 17h3" />
+  </svg>
+)
+
+export const Images = (p) => (
+  <svg {...base} {...p}>
+    <rect x="7.5" y="3.5" width="13" height="10" rx="2" />
+    <rect x="3.5" y="10.5" width="13" height="10" rx="2" />
+    <path d="M4.4 18.2 8 15l2.2 2 2.6-2.8 3.2 3.6" />
+  </svg>
+)
+
 export const ArrowsLR = (p) => (
   <svg {...base} {...p}>
     <path d="M8 8 4 12l4 4M16 8l4 4-4 4M4 12h16" />
